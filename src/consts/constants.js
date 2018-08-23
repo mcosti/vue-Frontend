@@ -1,5 +1,5 @@
 export default {
 
-    SERVER_API: "https://webdollar.ddns.net:80/"
+    SERVER_API: "https://pool.webdron.com:80/"
 
 };

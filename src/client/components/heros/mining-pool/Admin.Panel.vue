@@ -17,11 +17,11 @@
                     <!--</span>-->
                 <!--</div>-->
 
-                <!--<div v-if="!this.showMinersListStatus && this.poolIAmOwner " class="buttonContainer poolSingleButton">-->
-                    <!--<span v-on:click="this.showMinersListEnable" class="minerData buttonSmall settingsButton" >-->
-                        <!--Miners List-->
-                    <!--</span>-->
-                <!--</div>-->
+                <div v-if="!this.showMinersListStatus && this.poolIAmOwner " class="buttonContainer poolSingleButton">
+                    <span v-on:click="this.showMinersListEnable" class="minerData buttonSmall settingsButton" >
+                        Miners List
+                   </span>
+                </div>
 
                 <!--<div v-if="!this.showAdvancedSettingsStatus" class="buttonContainer poolSingleButton">-->
                     <!--<span v-on:click="this.showAdvancedSettingsEnable" class="minerData buttonSmall settingsButton" >-->
@@ -62,9 +62,9 @@
     import Vue from 'vue/dist/vue';
     import ReferralList from "./common/referrals/Referral-List.vue";
     import ReferralDetails from "./common/referrals/Referral-Details.vue";
-    import PoolMinersList from "./pool/components/Pool-Miners-List.vue"
-    import PoolMinerDetails from "./pool/components/Pool-Miner-Details.vue"
-    import SettingsPage from "./pool/components/Pool-Advanced-Settings.vue"
+    import PoolMinersList from "./pool/components/Pool-Miners-List.vue";
+    import PoolMinerDetails from "./pool/components/Pool-Miner-Details.vue";
+    import SettingsPage from "./pool/components/Pool-Advanced-Settings.vue";
 
     export default{
 
@@ -87,8 +87,8 @@
                 selectedIndex: -1,
 
 
-                poolAddress: 'WEBD$gCPE#0MUG@ReQk3wD7EB5vmMGDdo#YhHSr$',
-                poolFee: 0,
+                poolAddress: 'WEBD$gCIG2Du09C+ad42tzQLundaeEW4J2z1y@j$',
+                poolFee: 1,
                 poolName: '',
                 poolWebsite: '',
                 poolURL: '',

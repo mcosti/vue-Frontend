@@ -5,43 +5,15 @@
 
         <div class="topnav" id="menu">
 
-            <router-link to="/#mainSection" id="logoBox" class="active logoMenu" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
+            <a href="#" id="logoBox" class="active logoMenu" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
                 <img v-on:click="this.collapseMenuBack" src="/public/assets/images/WebDollar-logo-white.png" alt="webDollar logo" id="logo" title="webDollar logo"/>
-            </router-link>
-
-            <router-link to="/#papers" :class="mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
-                 <div v-on:click="this.collapseMenuBack">Paper</div>
-            </router-link>
-
-            <a href="http://webdscan.io" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' " target="_blank" >
-                <!--<router-link to="/explorer" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">-->
-                <div v-on:click="this.collapseMenuBack">Explorer</div>
-                <!--</router-link>-->
             </a>
+			<!--</router-link>
+			 <div><a class="copyPoolLink" @click="copyToClipboard"> Copy {{this.poolReferralFee}} % Referral Link </a> </div> -->
+          <!--  <div>  <a href="https://exchange.webdron.com" target="_blank">Exchange</a>         </div> -->
+           <div>  <a href="https://webdron.com" target="_blank">WEBDRON Home</a>         </div>
+            
 
-            <a href="https://webdollarforum.com" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' " target="_blank" >
-                <div v-on:click="this.collapseMenuBack">Forum</div>
-            </a>
-
-            <router-link to="/faq" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
-                <div v-on:click="this.collapseMenuBack">FAQ</div>
-            </router-link>
-
-            <router-link to="/#team" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
-                <div v-on:click="this.collapseMenuBack">Team</div>
-            </router-link>
-
-            <router-link to="/bounties" :class="mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
-                <div v-on:click="this.collapseMenuBack">Bounties</div>
-            </router-link>
-
-            <router-link to="/#what-is-WebDollar" :class="mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
-                <div v-on:click="this.collapseMenuBack">About</div>
-            </router-link>
-
-            <router-link to="/pool" :class="mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
-                <div v-on:click="this.collapseMenuBack">Pool</div>
-            </router-link>
 
             <a href="javascript:void(0);" style="font-size:15px;" :style="{display: (mobileMenuOpened || isMobile==false) ? 'none':'block'}" class="icon showMenu" @click="this.showMobileMenu" :class="mobileMenuOpened ? 'openedMenuLink' : '' ">&#9776;</a>
 
@@ -52,6 +24,8 @@
 </template>
 
 <script>
+
+
 
     export default {
 

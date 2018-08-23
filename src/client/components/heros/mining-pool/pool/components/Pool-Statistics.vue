@@ -1,9 +1,5 @@
 <template>
-
-    <div class="distributionGrid poolDescription">
-
-        <div class="verticalAlignMiddle">
-
+     <div>
             <span class="oneLineText">
                 Your Role: <span class="normalSpan yellowColor"> {{statsType}} </span>
             </span>
@@ -13,7 +9,7 @@
             </span>
 
             <span class="oneLineText">
-                Pool Fee: <span class="normalSpan yellowColor"> <a :href="this.poolWebsite"> {{this.poolFee}} %</a></span>
+                Pool Fee: <span class="normalSpan yellowColor"> {{this.poolFee}} %</span>
             </span>
 
             <span class="oneLineText">
@@ -44,10 +40,8 @@
             <span v-if="this.statsType === 'miner' " class="oneLineText">
                 Referral Potential Reward: <span class="normalSpan" :class="this.isNotNullColor"> {{this.referralPotential}} WEBD</span>
             </span>
-
-        </div>
-
-    </div>
+			</div>
+      
 
 </template>
 
@@ -66,7 +60,7 @@
 
             }
         },
-
+		 
         props: {
 
             statsType: {default: 'pool'},
@@ -194,7 +188,8 @@
 
         methods:{
 
-            handlePoolSelect(){
+		
+			handlePoolSelect(){
 
                 let poolName = this.poolsListSelected;
                 let value;

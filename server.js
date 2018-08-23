@@ -123,7 +123,7 @@ function render (req, res) {
 
     const context = {
         SEOMixinTitle: {
-            title:'WebDollar - Currency of the Internet',
+            title:'WEBDRON Pool - mining WebDollar - Currency of the Internet',
             facebook: 'WebDollar - Currency of the Internet',
             twitter: 'WebDollar - Currency of the Internet',
         }, // default title

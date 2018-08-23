@@ -5,42 +5,21 @@
 
         <div id="createPoolSection">
 
-            <h1 class="alignCenter bigMarginBottom">POOL Mining</h1>
-
+            <h1 class="alignCenter bigMarginBottom">WEBDRON Pool</h1>
+			
             <div class="distributionContainer">
-
-                <div class="distributionGrid borderBottom">
-                    <h2 class="subtitle">{{ this.minerPoolStatus === 'miner' ? 'Referral Quick Actions' : 'Pool Quick Actions'}}</h2>
-                </div>
-                <div class="distributionGrid borderBottom">
-                    <h2 class="subtitle">Pool Statistics</h2>
-                </div>
 
                 <div class="distributionGrid">
 
                     <div class="verticalAlignMiddle">
 
-                        <div class="poolQuickActions" v-if="this.poolReferralFee!=0">
+                        <div class="poolQuickActions">
 
-                            <!--<router-link class="copyPoolLink" to="/pool">-->
-                                <!--Referrals Dashboard-->
-                            <!--</router-link>-->
-
-                            <div>
-
-                                <p class="copyPoolLink" @click="copyToClipboard">
-                                    Copy Referral Link
-                                </p>
-
-                                <span style=""></span>
-
-                                <span :class="this.isNotNullColor"> Earn {{this.poolReferralFee}} % WEBD from each invited friend</span>
-
-                            </div>
+                            <blockchain-distribution-hero/> 
 
                         </div>
 
-                        <div v-if="this.poolReferralFee===0" class="poolQuickActions">
+                        <!-- <div v-if="this.poolReferralFee===0" class="poolQuickActions">
 
                             <span class="noMarginTop">Your current pools doesn't has referral system.</span>
 
@@ -48,11 +27,13 @@
                                 Create Your Own Pool
                             </router-link>
 
-                        </div>
+                        </div> -->
 
                     </div>
 
                 </div>
+				 <div class="distributionGrid poolDescription">
+				  <div class="verticalAlignMiddle">
 
                 <pool-statistics ref="poolStatistics"
                                  statsType="miner" :poolName="poolName" :poolWebsite="poolWebsite" :poolURL="poolURL" :poolFee="poolFee" :poolReferralFee="poolReferralFee"
@@ -61,12 +42,21 @@
                                  :poolBlocksConfirmed="poolBlocksConfirmed" :poolBlocksUnconfirmed="poolBlocksUnconfirmed" :poolBlocksConfirmedAndPaid="poolBlocksConfirmedAndPaid"
                                  :poolTimeRemaining="poolTimeRemaining" :rewardReferralTotal="rewardReferralTotal" :rewardReferralConfirmed="rewardReferralConfirmed"
                                  :poolBlocksBeingConfirmed="poolBlocksBeingConfirmed" :networkHashRate="networkHashRate">
-                </pool-statistics>
+	            </pool-statistics>
+				
+				<div v-if="this.poolReferralFee>0">
+					<span :class="this.isNotNullColor"> Earn {{this.poolReferralFee}} % WEBD from each invited friend </span>
+					<p class="copyPoolLink" @click="copyToClipboard"> Copy Referral Link </p>
+				</div>
+			</div>
 
+		</div>
             </div>
-
+			
+			
+			
+			
         </div>
-
     </div>
 
 </template>
@@ -76,8 +66,12 @@
     import Vue from 'vue';
     import Clipboard from 'v-clipboard';
     import PoolStatistics from '../pool/components/Pool-Statistics.vue'
-
-    Vue.use(Clipboard);
+	import BlockchainDistributionHero from '../../Blockchain-Distribution.hero.vue';
+	import AdminPanel from '../Admin.Panel.vue';
+	import Layout from '../../../layout/Layout.vue';
+    import MultipleTabs from '../../Multiple-Tabs.hero.vue';
+   
+   Vue.use(Clipboard);
 
     export default{
 
@@ -85,7 +79,7 @@
 
         data: () => {
             return {
-
+				
                 poolName: '',
                 poolWebsite: '',
                 poolURL: '',
@@ -114,7 +108,14 @@
             }
         },
 
-        components:{PoolStatistics},
+        components:{
+		
+		PoolStatistics,
+		BlockchainDistributionHero,
+		AdminPanel,
+		Layout,
+        MultipleTabs,
+		},
 
         computed:{
 
@@ -161,7 +162,7 @@
                     this.poolURL = WebDollar.Blockchain.MinerPoolManagement.minerPoolSettings.poolURL;
                     this.poolName = WebDollar.Blockchain.MinerPoolManagement.minerPoolSettings.poolName;
                     this.poolWebsite = WebDollar.Blockchain.MinerPoolManagement.minerPoolSettings.poolWebsite;
-
+					
                     this.poolURLReferral = WebDollar.Blockchain.MinerPoolManagement.minerPoolSettings.poolURLReferral;
 
                     this.getPoolServers();

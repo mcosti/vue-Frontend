@@ -1,13 +1,13 @@
 <template>
 
-    <div id="coinDistributionSection" class="fullSection">
+  <!--  <div id="coinDistributionSection" class="fullSection"> -->
 
-        <div class="verticalAlignMiddle">
+       <!-- <div class="verticalAlignMiddle"> -->
 
-            <span class="pageTitle alignCenter bigMarginBottom">Coin Supply</span>
+          <!--  <span class="pageTitle alignCenter bigMarginBottom">Coin Supply</span> 
 
-            <div class="distributionContainer maxWidthSection">
-
+            <div class="distributionContainer maxWidthSection">-->
+				<div style="margin-top:50px">
                 <div class="distributionGrid">
                     <div class="webdCoin spinCoin">
                         <img src="/public/assets/images/logo-coin.png" alt="webDollar logo black" title="webDollar black logo" class="coinLogo">
@@ -20,15 +20,15 @@
                             <span v-show="!this.loaded" class="value">
                                 <loading-spinner />
                             </span>
-                            <span v-show="this.loaded" class="value">{{this.distributionAmount}}</span>
-                            <span class="description">Current Distribution</span>
+                            <span v-show="this.loaded" class="value">{{this.distributionAmount}} </span>
+                            <span class="description">Current WEBD Distribution</span>
                         </div>
                         <div>
                             <span v-show="!this.loaded" class="value">
                                  <loading-spinner />
                             </span>
                             <span v-show="this.loaded" class="value">{{this.distributionBlocks}}</span>
-                            <span class="description">Mined blocks</span>
+                            <span class="description">Total Mined blocks</span>
                         </div>
                         <div>
                             <span v-show="!this.loaded" class="value">
@@ -48,15 +48,15 @@
                     <span class="minValue">{{this.distributionProgressBarMinString}} WEBD</span>
                     <span class="maxValue">{{this.distributionProgressBarMaxString}} WEBD</span>
 
-                    <br/><br/><br/>
+                  </div>  <!--<br/><br/><br/> -->
 
                 </div>
 
-            </div>
+            <!-- </div> -->
 
-        </div>
+      <!--  </div> -->
 
-    </div>
+<!-- </div> -->
 </template>
 
 <script>

@@ -6,29 +6,32 @@
 
             <div slot="content">
 
-                <web-dollar-hero/>
+                <!-- <web-dollar-hero/> -->
 
-                <what-is-hero/>
+                <!-- <what-is-hero/> -->
 
-                <peer-to-peer-hero/>
+               <!-- <peer-to-peer-hero/> -->
 
-                <newsletter-hero/>
+                <!-- <newsletter-hero/> -->
 
-                <new-crypto-generation-hero/>
+                <!-- <new-crypto-generation-hero/>-->
 
-                <blockchain-distribution-hero/>
+               
 
                 <miner-pool-hero v-show="!poolActivated"/>
 
                 <pool-hero v-show="poolActivated"/>
-
-                <paper/>
+				
+				<!-- <blockchain-distribution-hero/> -->
+                
+				
+				<!-- <paper/>
 
                 <timeline-hero/>
 
                 <team-hero/>
 
-                <know-us-hero/>
+                <know-us-hero/> -->
 
             </div>
 
